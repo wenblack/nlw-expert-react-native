@@ -1,8 +1,8 @@
 {
   "build": {
     "image": {
-      "android": "default",
-      "ios": "default"
+      "android": { "image": "default" },
+      "ios": { "image": "default" }
     },
     "development": {
       "developmentClient": true,
