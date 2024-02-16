@@ -1,17 +1,6 @@
 {
   "build": {
-    "android": {
-      "image": "default",
-      "env": {
-        "PLATFORM": "android"
-      }
-    },
-    "ios": {
-      "image": "latest",
-      "env": {
-        "PLATFORM": "ios"
-      }
-    },
+    "image": "default",
     "development": {
       "developmentClient": true,
       "distribution": "internal",
