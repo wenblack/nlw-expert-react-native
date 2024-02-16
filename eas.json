@@ -1,0 +1,35 @@
+{
+  "build": {
+    "android": {
+      "image": "default",
+      "env": {
+        "PLATFORM": "android"
+      }
+    },
+    "ios": {
+      "image": "latest",
+      "env": {
+        "PLATFORM": "ios"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      }
+    },
+    "production": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      }
+    }
+  }
+}
