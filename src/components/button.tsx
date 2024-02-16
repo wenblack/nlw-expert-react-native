@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 import {
   Platform,
@@ -19,16 +20,9 @@ type ButtonIconProps = {
 };
 
 function Button({ children, ...rest }: ButtonProps) {
-  if (Platform.OS == "web") {
-    return (
-      <button className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row">
-        {children}
-      </button>
-    );
-  }
   return (
     <TouchableOpacity
-      className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row"
+      className="h-12 bg-white rounded-md items-center justify-center flex-row"
       activeOpacity={0.7}
       {...rest}
     >
@@ -39,7 +33,9 @@ function Button({ children, ...rest }: ButtonProps) {
 
 function ButtonText({ children }: ButtonTextProps) {
   return (
-    <Text className="text-black font-heading text-base mx-2">{children}</Text>
+    <Text className="text-[#5f0c06] font-heading text-base mx-2">
+      {children}
+    </Text>
   );
 }
 

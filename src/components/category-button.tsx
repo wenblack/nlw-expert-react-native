@@ -1,4 +1,4 @@
-import { Platform, Pressable, PressableProps, Text } from "react-native";
+import { Pressable, PressableProps, Text } from "react-native";
 import { clsx } from "clsx";
 
 type CategoryProps = PressableProps & {
@@ -7,29 +7,15 @@ type CategoryProps = PressableProps & {
 };
 
 export function CategoryButton({ title, isSelected, ...rest }: CategoryProps) {
-  if (Platform.OS === "web") {
-    return (
-      <button
-        className={clsx(
-          "bg-slate-800 px-4 justify-center rounded-md h-10",
-          isSelected &&
-            "border-2 border-lime-300 text-slate-100 font-subtitle text-sm"
-        )}
-      >
-        {title}
-      </button>
-    );
-  }
-
   return (
     <Pressable
       className={clsx(
-        "bg-slate-800 px-4 justify-center rounded-md h-10",
-        isSelected && "border-2 border-lime-300"
+        "bg-slate-100 px-4 justify-center rounded-md h-10",
+        isSelected && "border-2 border-red-500"
       )}
       {...rest}
     >
-      <Text className="text-slate-100 font-subtitle text-sm">{title}</Text>
+      <Text className="text-red-900 font-subtitle text-sm">{title}</Text>
     </Pressable>
   );
 }

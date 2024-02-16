@@ -1,13 +1,13 @@
-import { useRef, useState } from 'react';
-import { View, FlatList, SectionList, Text } from 'react-native';
-import { Link } from 'expo-router';
+import { useRef, useState } from "react";
+import { View, FlatList, SectionList, Text } from "react-native";
+import { Link } from "expo-router";
 
-import { useCartStore } from '@/stores/cart-store';
-import { CATEGORIES, MENU, ProductProps } from '@/utils/data/products';
+import { useCartStore } from "@/stores/cart-store";
+import { CATEGORIES, MENU, ProductProps } from "@/utils/data/products";
 
-import { Header } from '@/components/header';
-import { Product } from '@/components/product';
-import { CategoryButton } from '@/components/category-button';
+import { Header } from "@/components/header";
+import { Product } from "@/components/product";
+import { CategoryButton } from "@/components/category-button";
 
 export default function Home() {
   const cartStore = useCartStore();
@@ -17,14 +17,14 @@ export default function Home() {
 
   const cartQuantityItems = cartStore.products.reduce(
     (total, product) => total + product.quantity,
-    0,
+    0
   );
 
   function handleCategorySelect(selectedCategory: string) {
     setCategory(selectedCategory);
 
     const sectionIndex = CATEGORIES.findIndex(
-      (category) => category === selectedCategory,
+      (category) => category === selectedCategory
     );
 
     if (sectionListRef.current) {
@@ -67,7 +67,9 @@ export default function Home() {
           </Link>
         )}
         renderSectionHeader={({ section: { title } }) => (
-          <Text className="text-xl text-white font-heading mt-8 mb-3">{title}</Text>
+          <Text className="text-xl text-white font-heading mt-8 mb-3">
+            {title}
+          </Text>
         )}
         className="flex-1 p-5"
         showsVerticalScrollIndicator={false}
