@@ -1,27 +1,31 @@
 {
+  "cli": {
+    "version": ">= 3.7.2"
+  },
   "build": {
-    "image": {
-      "android": { "image": "default" },
-      "ios": { "image": "default" }
-    },
     "development": {
-      "developmentClient": true,
       "distribution": "internal",
-      "env": {
-        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      "android": {
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "ios": {
+        "buildConfiguration": "Debug",
+        "resourceClass": "m1-medium"
       }
     },
     "preview": {
       "distribution": "internal",
-      "env": {
-        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      "ios": {
+        "resourceClass": "m1-medium"
       }
     },
     "production": {
-      "distribution": "internal",
-      "env": {
-        "EXPO_PUBLIC_PHONE_NUMBER": "+5511992566539"
+      "ios": {
+        "resourceClass": "m1-medium"
       }
     }
+  },
+  "submit": {
+    "production": {}
   }
 }
