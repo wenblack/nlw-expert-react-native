@@ -1,5 +1,10 @@
-import { ReactNode } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { ReactNode } from "react";
+import {
+  Platform,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
 
 type ButtonProps = TouchableOpacityProps & {
   children: ReactNode;
@@ -14,6 +19,13 @@ type ButtonIconProps = {
 };
 
 function Button({ children, ...rest }: ButtonProps) {
+  if (Platform.OS == "web") {
+    return (
+      <button className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row">
+        {children}
+      </button>
+    );
+  }
   return (
     <TouchableOpacity
       className="h-12 bg-lime-400 rounded-md items-center justify-center flex-row"
@@ -26,11 +38,13 @@ function Button({ children, ...rest }: ButtonProps) {
 }
 
 function ButtonText({ children }: ButtonTextProps) {
-  return <Text className="text-black font-heading text-base mx-2">{children}</Text>;
+  return (
+    <Text className="text-black font-heading text-base mx-2">{children}</Text>
+  );
 }
 
 function ButtonIcon({ children }: ButtonIconProps) {
-  return children
+  return children;
 }
 
 Button.Text = ButtonText;
