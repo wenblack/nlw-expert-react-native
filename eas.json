@@ -1,6 +1,9 @@
 {
   "build": {
-    "image": "default",
+    "image": {
+      "android": "default",
+      "ios": "default"
+    },
     "development": {
       "developmentClient": true,
       "distribution": "internal",
