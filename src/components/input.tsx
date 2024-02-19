@@ -7,7 +7,7 @@ export function Input({ ...rest }: TextInputProps) {
       multiline
       textAlignVertical="top"
       placeholderTextColor={colors.slate[500]}
-      className="h-32 bg-white rounded-md px-4 py-3 font-body text-sm "
+      className="h-32 bg-white border shadow-sm border-slate-300 rounded-md px-4 py-3 font-body text-sm "
       {...rest}
     />
   );

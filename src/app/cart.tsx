@@ -67,8 +67,8 @@ export default function Cart() {
   }
 
   return (
-    <View className="flex-1 pt-8">
-      <Header title="Seu carrinho" />
+    <View className="flex-1 pt-8 bg-white">
+      <Header type="Cart" title="Seu carrinho" />
 
       <KeyboardAwareScrollView>
         <ScrollView>
@@ -77,6 +77,7 @@ export default function Cart() {
               <View className="border-b border-slate-100 border-opacity-70">
                 {cartStore.products.map((product) => (
                   <Product
+                    type="Cart"
                     key={product.id}
                     data={product}
                     onPress={() => handleProductRemove(product)}
@@ -90,8 +91,10 @@ export default function Cart() {
             )}
 
             <View className="flex-row gap-2 items-center mt-5 mb-4">
-              <Text className="text-white text-xl font-subtitle">Total:</Text>
-              <Text className="text-slate-100 text-2xl font-heading">
+              <Text className="text-slate-700 text-xl font-subtitle">
+                Total:
+              </Text>
+              <Text className="text-red-600 text-2xl font-heading">
                 {total}
               </Text>
             </View>
@@ -111,7 +114,7 @@ export default function Cart() {
         <Button onPress={handleOrder}>
           <Button.Text>Enviar pedido</Button.Text>
           <Button.Icon>
-            <Feather name="arrow-right-circle" size={20} />
+            <Feather name="arrow-right-circle" size={20} color={"white"} />
           </Button.Icon>
         </Button>
 

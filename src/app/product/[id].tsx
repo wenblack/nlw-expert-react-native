@@ -30,7 +30,7 @@ export default function Product() {
   }
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 bg-white">
       <Image
         source={product.cover}
         className="w-full h-52"
@@ -38,19 +38,21 @@ export default function Product() {
       />
 
       <View className="p-5 mt-8 flex-1">
-        <Text className="text-white text-xl font-heading">{product.title}</Text>
+        <Text className="text-xl text-gray-900  font-heading">
+          {product.title}
+        </Text>
 
-        <Text className="text-white text-2xl font-heading my-2">
+        <Text className=" text-2xl text-red-500 font-heading my-2">
           {formatCurrency(product.price)}
         </Text>
 
-        <Text className="text-slate-200 font-body text-base leading-6 mb-6">
+        <Text className="text-slate-600 font-body text-base leading-6 mb-6">
           {product.description}
         </Text>
 
         {product.ingredients.map((ingredient) => (
           <Text
-            className="text-slate-200 font-body text-base leading-6"
+            className="text-slate-600 font-body text-base leading-6"
             key={ingredient}
           >
             {"\u2022"} {ingredient}
@@ -61,7 +63,7 @@ export default function Product() {
       <View className="p-5 pb-8 gap-5">
         <Button onPress={handleAddToCart}>
           <Button.Icon>
-            <Feather name="plus-circle" size={20} />
+            <Feather name="plus-circle" size={20} color={"white"} />
           </Button.Icon>
 
           <Button.Text>Adicionar ao pedido</Button.Text>

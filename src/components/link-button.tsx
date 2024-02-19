@@ -1,12 +1,15 @@
-import { Link, LinkProps } from 'expo-router';
+import { Link, LinkProps } from "expo-router";
 
 type LinkButtonProps = LinkProps<string> & {
   title: string;
-}
+};
 
 export function LinkButton({ title, ...rest }: LinkButtonProps) {
   return (
-    <Link className="text-slate-300 text-center text-base font-body" {...rest}>
+    <Link
+      className=" font-semibold text-gray-900 text-center text-base "
+      {...rest}
+    >
       {title}
     </Link>
   );
