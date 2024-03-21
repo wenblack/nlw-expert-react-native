@@ -4,7 +4,7 @@ const MENU = [
     data: [
       {
         id: "1",
-        title: "Musssarela",
+        title: "mussarela",
         price: 34.9,
         description:
           "Mussarela e tomates",
@@ -17,7 +17,7 @@ const MENU = [
       },
       {
         id: "8",
-        title: "Calabresa",
+        title: "calabresa",
         price: 34.9,
         description:
           "Calabresa e cebola",
@@ -35,7 +35,7 @@ const MENU = [
     data: [
       {
         id: "2",
-        title: "4 Queijos",
+        title: "quatro queijos",
         price: 34.9,
         description:
           "Mussarela, Provolone, Requeijão e Parmesão",
@@ -46,11 +46,11 @@ const MENU = [
           "Provolone",
           "Requeijão",
           "Parmesão"
-          ],
+        ],
       },
       {
         id: "3",
-        title: "Portuguesa",
+        title: "portuguesa",
         price: 34.9,
         description:
           "Presunto, Milho, Ovos, Cebola e Mussarela",
@@ -71,7 +71,7 @@ const MENU = [
     data: [
       {
         id: "5",
-        title: "Bombom de Uva",
+        title: "bombom de Uva",
         price: 49.9,
         description:
           "Creme de bom bom, uvas verdes e chocolate ao leite",
@@ -85,7 +85,7 @@ const MENU = [
       },
       {
         id: "6",
-        title: "Brigadeiro",
+        title: "brigadeiro",
         price: 49.9,
         description:
           "Chcolate ao leite e Granulado",

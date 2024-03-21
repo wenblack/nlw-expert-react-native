@@ -33,7 +33,7 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
 
           <View className="flex-1 ml-3">
             <View className="flex-row items-center">
-              <Text className=" font-subtitle text-red-700 text-base flex-1">
+              <Text className=" font-subtitle uppercase text-red-700 text-base flex-1">
                 {data.title}
               </Text>
 
@@ -61,7 +61,7 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
 
         <View className="flex-1 ml-3">
           <View className="flex-row items-center">
-            <Text className="text-slate-100 font-subtitle text-base flex-1">
+            <Text className="text-slate-100 uppercase font-subtitle text-base flex-1">
               {data.title}
             </Text>
 

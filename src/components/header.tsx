@@ -1,6 +1,7 @@
-import { Image, Text, View, TouchableOpacity } from "react-native";
+import { TextInput, Text, View, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import colors from "tailwindcss/colors";
+import colors, { gray, white } from "tailwindcss/colors";
+import { router } from "expo-router";
 import { Link } from "expo-router";
 
 type HeaderProps = {
@@ -9,14 +10,21 @@ type HeaderProps = {
   type?: "HomePage" | "Cart";
 };
 
+function goToPage(name: string) {
+  router.push(`../result/calabresa`);
+}
+
 export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
   if (type === "Cart") {
     return (
       <View className="flex-row items-center border-b border-slate-300 pb-5 mx-5">
         <View className="flex-1">
-          <Text className=" text-xl text-gray-900 font-heading mt-2">
-            {title}
-          </Text>
+          <TextInput
+            placeholder={title}
+            onSubmitEditing={() => {
+              goToPage("");
+            }}
+          />
         </View>
 
         {cartQuantityItems > 0 && (
@@ -39,7 +47,20 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
   return (
     <View className="flex-row items-center border-b border-slate-100 pb-5 mx-5">
       <View className="flex-1">
-        <Text className="text-white text-xl font-heading mt-2">{title}</Text>
+        <TextInput
+          placeholder={title}
+          placeholderTextColor={gray[700]}
+          onSubmitEditing={() => {
+            goToPage("");
+          }}
+          style={{
+            backgroundColor: "white",
+            padding: 8,
+            marginRight: 16,
+            borderColor: "white",
+            borderRadius: 8,
+          }}
+        />
       </View>
 
       {cartQuantityItems > 0 && (
