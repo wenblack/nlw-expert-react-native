@@ -38,7 +38,7 @@ export default function Product() {
       />
 
       <View className="p-5 mt-8 flex-1">
-        <Text className="text-xl text-gray-900  font-heading">
+        <Text className="text-xl text-gray-900 capitalize  font-heading">
           {product.title}
         </Text>
 

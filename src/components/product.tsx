@@ -32,8 +32,11 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
           <Image source={data.thumbnail} className="w-20 h-20 rounded-md" />
 
           <View className="flex-1 ml-3">
-            <View className="flex-row items-center">
-              <Text className=" font-subtitle uppercase text-red-700 text-base flex-1">
+            <View className="flex-row items-center ">
+              <Text
+                style={{ textTransform: "capitalize" }}
+                className=" font-subtitle  text-red-700 text-base flex-1"
+              >
                 {data.title}
               </Text>
 
@@ -61,7 +64,10 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
 
         <View className="flex-1 ml-3">
           <View className="flex-row items-center">
-            <Text className="text-slate-100 uppercase font-subtitle text-base flex-1">
+            <Text
+              style={{ textTransform: "capitalize" }}
+              className="text-slate-100  font-subtitle text-base flex-1"
+            >
               {data.title}
             </Text>
 
