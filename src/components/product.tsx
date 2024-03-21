@@ -1,3 +1,4 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import { forwardRef } from "react";
 import {
   Image,
@@ -41,9 +42,16 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
               </Text>
 
               {data.quantity && (
-                <Text className="text-slate-500 font-subtitle text-sm">
-                  x {data.quantity}
-                </Text>
+                <>
+                  <Text className="text-slate-500 font-subtitle text-sm">
+                    x {data.quantity}
+                  </Text>
+                  <MaterialIcons
+                    name="delete-outline"
+                    size={16}
+                    color={"red"}
+                  />
+                </>
               )}
             </View>
 

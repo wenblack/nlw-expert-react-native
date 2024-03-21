@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigation } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import { Text, View, ScrollView, Alert, Linking } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -12,7 +12,6 @@ import { Product } from "@/components/product";
 import { Input } from "@/components/input";
 import { Button } from "@/components/button";
 import { Feather } from "@expo/vector-icons";
-import { LinkButton } from "@/components/link-button";
 
 const PHONE_NUMBER = process.env.EXPO_PUBLIC_PHONE_NUMBER;
 
@@ -66,30 +65,40 @@ export default function Cart() {
     navigation.goBack();
   }
 
+  if (cartStore.products.length === 0) {
+    return (
+      <View className="flex-1 items-center justify-between pt-8 bg-white">
+        <Header type="Cart" title="Seu carrinho" />
+        <Text className="font-body text-slate-400 text-center my-8">
+          Seu carrinho está vazio 😭
+        </Text>
+        <View className="w-[90%] mb-8">
+          <Button onPress={() => router.push("/")}>
+            <Button.Icon>
+              <Feather name="chevron-left" size={20} color={"white"} />
+            </Button.Icon>
+            <Button.Text>Voltar ao Cardápio</Button.Text>
+          </Button>
+        </View>
+      </View>
+    );
+  }
   return (
     <View className="flex-1 pt-8 bg-white">
       <Header type="Cart" title="Seu carrinho" />
-
       <KeyboardAwareScrollView>
         <ScrollView>
           <View className="p-5 flex-1">
-            {cartStore.products.length > 0 ? (
-              <View className="border-b border-slate-100 border-opacity-70">
-                {cartStore.products.map((product) => (
-                  <Product
-                    type="Cart"
-                    key={product.id}
-                    data={product}
-                    onPress={() => handleProductRemove(product)}
-                  />
-                ))}
-              </View>
-            ) : (
-              <Text className="font-body text-slate-400 text-center my-8">
-                Seu carrinho está vazio.
-              </Text>
-            )}
-
+            <View className="border-b border-slate-100 border-opacity-70">
+              {cartStore.products.map((product) => (
+                <Product
+                  type="Cart"
+                  key={product.id}
+                  data={product}
+                  onPress={() => handleProductRemove(product)}
+                />
+              ))}
+            </View>
             <View className="flex-row gap-2 items-center mt-5 mb-4">
               <Text className="text-slate-700 text-xl font-subtitle">
                 Total:
@@ -98,7 +107,6 @@ export default function Cart() {
                 {total}
               </Text>
             </View>
-
             <Input
               placeholder="Informe o endereço de entrega com rua, bairro, CEP, número e complemento..."
               onChangeText={setAddress}
@@ -118,7 +126,13 @@ export default function Cart() {
           </Button.Icon>
         </Button>
 
-        <LinkButton title="Voltar ao cardápio" href="/" />
+        <Button type="transparent">
+          <Button.Icon>
+            <Feather name="chevron-left" size={20} color={"black"} />
+          </Button.Icon>
+
+          <Button.Text type="text-black">Voltar ao cardápio</Button.Text>
+        </Button>
       </View>
     </View>
   );

@@ -1,25 +1,35 @@
 import React from "react";
 import { ReactNode } from "react";
-import {
-  Platform,
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-} from "react-native";
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { router } from "expo-router";
 
 type ButtonProps = TouchableOpacityProps & {
   children: ReactNode;
+  type?: "transparent";
 };
 
 type ButtonTextProps = {
   children: ReactNode;
+  type?: "text-black";
 };
 
 type ButtonIconProps = {
   children: ReactNode;
 };
 
-function Button({ children, ...rest }: ButtonProps) {
+function Button({ children, type, ...rest }: ButtonProps) {
+  if (type === "transparent") {
+    return (
+      <TouchableOpacity
+        className="h-12  rounded-md items-center justify-center flex-row"
+        activeOpacity={0.7}
+        onPress={() => router.back()}
+        {...rest}
+      >
+        {children}
+      </TouchableOpacity>
+    );
+  }
   return (
     <TouchableOpacity
       className="h-12 bg-red-600 rounded-md items-center justify-center flex-row"
@@ -31,11 +41,16 @@ function Button({ children, ...rest }: ButtonProps) {
   );
 }
 
-function ButtonText({ children }: ButtonTextProps) {
+function ButtonText({ children, type }: ButtonTextProps) {
+  if (type === "text-black") {
+    return (
+      <Text className=" text-black font-heading text-base mx-2">
+        {children}
+      </Text>
+    );
+  }
   return (
-    <Text className="text-[#5f0c06] text-white font-heading text-base mx-2">
-      {children}
-    </Text>
+    <Text className=" text-white font-heading text-base mx-2">{children}</Text>
   );
 }
 

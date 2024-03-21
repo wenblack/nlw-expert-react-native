@@ -68,8 +68,13 @@ export default function Product() {
 
           <Button.Text>Adicionar ao pedido</Button.Text>
         </Button>
+        <Button type="transparent">
+          <Button.Icon>
+            <Feather name="chevron-left" size={20} color={"black"} />
+          </Button.Icon>
 
-        <LinkButton title="Voltar ao cardápio" href="/" />
+          <Button.Text type="text-black">Voltar ao cardápio</Button.Text>
+        </Button>
       </View>
     </View>
   );
