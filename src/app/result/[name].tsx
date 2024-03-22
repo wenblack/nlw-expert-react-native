@@ -23,7 +23,7 @@ export default function Result() {
     return (
       <View className="flex-1 items-center justify-between pt-8 bg-white">
         <Header type="ResultPage" title="Seu carrinho" />
-        <Text className="font-body text-slate-400 text-center my-8">
+        <Text className="font-body text-slate-700 text-center my-8">
           Nenhum produto encontrado 😭
         </Text>
         <View className="w-[90%] mb-8">
@@ -46,7 +46,7 @@ export default function Result() {
         title="Buscar Produtos"
       ></Header>
       <View className="w-[90%] mt-4 self-center border-b pb-1 border-blue-100">
-        <Text className="text-slate-50 text-xl font-subtitle">
+        <Text className="text-slate-950 text-xl font-subtitle">
           Encontramos{" "}
           {productFilter.length === 1
             ? `${productFilter.length} Produto`

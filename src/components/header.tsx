@@ -1,6 +1,6 @@
 import { TextInput, Text, View, TouchableOpacity, Alert } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import colors, { gray } from "tailwindcss/colors";
+import colors, { black, gray } from "tailwindcss/colors";
 import { Link, router } from "expo-router";
 import { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -37,7 +37,7 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
                 </Text>
               </View>
 
-              <Feather name="shopping-bag" color={colors.white} size={24} />
+              <Feather name="shopping-bag" color={"black"} size={24} />
             </TouchableOpacity>
           </Link>
         )}
@@ -49,9 +49,13 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
     return (
       <View className="flex-row items-center  mx-5">
         <Link href={"/"}>
-          <MaterialIcons name="arrow-back-ios" size={28} color={"white"} />
+          <MaterialIcons
+            name="arrow-back-ios"
+            size={28}
+            color={colors.red[500]}
+          />
         </Link>
-        <View className=" bg-white p-2 rounded-md flex-1 flex-row  justify-between">
+        <View className=" bg-white p-2 border border-gray-300 rounded-full shadow-sm flex-1 flex-row  justify-between">
           <MaterialIcons name="search" size={28} color={"gray"}></MaterialIcons>
           <TextInput
             className="w-[90%] pl-1"
@@ -66,13 +70,13 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
         {cartQuantityItems > 0 && (
           <Link href="/cart" asChild className="ml-3 mb-2">
             <TouchableOpacity className="relative" activeOpacity={0.7}>
-              <View className="bg-white w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5">
-                <Text className="text-red-800 font-bold text-xs">
+              <View className="bg-red-500  w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5">
+                <Text className="text-red-50 font-bold text-xs">
                   {cartQuantityItems}
                 </Text>
               </View>
 
-              <Feather name="shopping-bag" color={"white"} size={24} />
+              <Feather name="shopping-bag" color={colors.red[500]} size={24} />
             </TouchableOpacity>
           </Link>
         )}
@@ -82,7 +86,7 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
 
   return (
     <View className="flex-row items-center  mx-5">
-      <View className=" bg-white p-2 rounded-md flex-1 flex-row  justify-between">
+      <View className=" bg-white p-2 border border-gray-300 rounded-full shadow-sm flex-1 flex-row  justify-between">
         <MaterialIcons name="search" size={28} color={"gray"}></MaterialIcons>
         <TextInput
           className="w-[90%] pl-1"
@@ -97,13 +101,13 @@ export function Header({ title, cartQuantityItems = 0, type }: HeaderProps) {
       {cartQuantityItems > 0 && (
         <Link href="/cart" asChild className="ml-3 mb-2">
           <TouchableOpacity className="relative" activeOpacity={0.7}>
-            <View className="bg-white w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5">
-              <Text className="text-red-800 font-bold text-xs">
+            <View className="bg-black  w-4 h-4 rounded-full items-center justify-center top-2 z-10 -right-3.5">
+              <Text className="text-red-50 font-bold text-xs">
                 {cartQuantityItems}
               </Text>
             </View>
 
-            <Feather name="shopping-bag" color={"white"} size={24} />
+            <Feather name="shopping-bag" color={"black"} size={24} />
           </TouchableOpacity>
         </Link>
       )}

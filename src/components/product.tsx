@@ -74,7 +74,7 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
           <View className="flex-row items-center">
             <Text
               style={{ textTransform: "capitalize" }}
-              className="text-slate-100  font-subtitle text-base flex-1"
+              className="text-red-700  font-subtitle text-base flex-1"
             >
               {data.title}
             </Text>
@@ -86,7 +86,7 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
             )}
           </View>
 
-          <Text className="text-slate-200 text-xs leading-5 mt-0.5">
+          <Text className="text-slate-900 text-xs leading-5 mt-0.5">
             {data.description}
           </Text>
         </View>
